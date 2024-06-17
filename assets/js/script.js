@@ -12,7 +12,7 @@
 //ajax para consulta
 $(document).ready(function () {
   $("#btn-buscar").submit(function () {
-    event.preventDefault();,
+    event.preventDefault();
     alert("entro al clic del btn");
     $.ajax({
       url: "https://superheroapi.com/api/4905856019427443/123",
