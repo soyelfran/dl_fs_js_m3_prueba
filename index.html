@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SuperHero API prueba DL/FS_JS</title>
+    <!-- AGREGAR FAVICON  -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico" />
   </head>
   <body>
     <!-- Ultimo SuperHero Valido 732 IronMan
@@ -60,74 +62,36 @@
       </div>
     </div>
     <!-- FIN IMAGEN CONTENEDOR -->
-    <!-- CONTENEDOR BUSQUEDA Y TABLA -->
+    <!-- CONTENEDOR BUSQUEDA Y TABLA form -->
     <div class="container mb-3 mt-3">
       <div class="row">
         <div class="d-flex flex-row">
-          <input
-            class="form-control form-control-lg"
-            type="text"
-            placeholder="ingrese numero a buscar"
-            aria-label=".form-control-lg"
-            id="in_buscar" />
-          <button type="submit" class="btn btn-lg btn-primary" id="btn-buscar">
-            Buscar
-          </button>
+          <form id="idformulario">
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="ingrese numero a buscar"
+              aria-label=".form-control-lg"
+              id="in_buscar" />
+            <button
+              type="submit"
+              class="btn btn-lg btn-primary"
+              id="btn-buscar">
+              Buscar
+            </button>
+          </form>
         </div>
       </div>
       <div class="row" id="row_error">
         <span id="txt_error"></span>
       </div>
     </div>
-    <!-- FIN CONTENEDOR BUSQUEDA Y TABLA -->
+    <!-- FIN CONTENEDOR BUSQUEDA Y TABLA form-->
     <!-- CONTENEDOR TARJETA DATOS PERSONALES SH -->
     <!-- HACER ESTA TARGETA TOGGLE ON OR OFF SI ES QUE TIENE DATOS EL ARREGLO CON INFO DEL SH -->
     <div class="container" id="sh_info">
       <div class="row">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">SuperHero encontrado</h5>
-                <h6>Nombre: <span id="sh_nombre">nombre encontrado</span></h6>
-                <p class="card-text">
-                  <span id="sh_conexiones">conexiones:</span>
-                  <span id="sh_conexiones_texto">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </span>
-                </p>
-                <p>
-                  <span id="sh_publicadopor" class="text-body-secondary">
-                    publicado por:
-                  </span>
-                </p>
-                <hr />
-                <p>Ocupacion: <span id="sh_ocupacion"></span></p>
-                <hr />
-                <p>
-                  primera aparicion: <span id="sh_primera_aparicion"></span>
-                </p>
-                <hr />
-                <p>altura: <span id="sh_altura"></span></p>
-                <hr />
-                <p>peso: <span id="sh_peso"></span></p>
-                <hr />
-                <p>alianzas: <span id="sh_alianzas"></span></p>
-                <hr />
-                <p class="card-text">
-                  <small class="text-body-secondary">
-                    Last updated 3 mins ago
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card mb-3" id="tarjeta_body"></div>
       </div>
     </div>
     <!-- CONTENEDOR TARJETA DATOS PERSONALES SH -->
