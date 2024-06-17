@@ -63,13 +63,39 @@ $(document).ready(function () {
       return;
     }
 
+    function dibujarGrafico(powerstats, name) {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+          text: `Estadísticas de Poder de ${name}`,
+        },
+        data: [
+          {
+            type: "pie",
+            startAngle: 240,
+            yValueFormatString: '##0"%"',
+            indexLabel: "{label} {y}",
+            dataPoints: [
+              { y: parseInt(powerstats.intelligence), label: "Inteligencia" },
+              { y: parseInt(powerstats.strength), label: "Fuerza" },
+              { y: parseInt(powerstats.speed), label: "Velocidad" },
+              { y: parseInt(powerstats.durability), label: "Durabilidad" },
+              { y: parseInt(powerstats.power), label: "Poder" },
+              { y: parseInt(powerstats.combat), label: "Combate" },
+            ],
+          },
+        ],
+      });
+      chart.render();
+    }
+
     // Realizar la solicitud AJAX
     $.ajax({
       url: `https://superheroapi.com/api.php/4905856019427443/${valor_formulario}`,
       type: "GET",
       success: function (response) {
         displayTarjeta(response); // Mostrar la tarjeta con los datos recibidos
-        // dibujarGrafico(response.powerstats, response.name);
+        dibujarGrafico(response.powerstats, response.name); //Dibujar grafico con estadisticas
       },
       dataType: "json",
       error: function (error) {
